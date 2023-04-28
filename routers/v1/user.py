@@ -28,7 +28,7 @@ async def check_user(
         session: SessionType = Depends(database_session),
         fingerprint_id: str = ...,
         weak_fingerprint_id: str = ...,
-        collected_typing_patterns: list[str] = Query(...),
+        collected_typing_patterns: list[str] = Query(default=[]),
 ) -> int:
     """Check user endpoint
 
