@@ -1,0 +1,15 @@
+wheel==0.40.0
+fastapi~=0.94.1
+pip~=23.0.1
+pydantic~=1.10.6
+SQLAlchemy~=2.0.2
+uvicorn==0.21.1
+pyyaml==6.0
+dataclass-factory
+pytest==7.2.2
+pytest-asyncio==0.20.3
+httpx~=0.23.3
+python-dotenv
+asyncpg
+psycopg2
+deepdiff

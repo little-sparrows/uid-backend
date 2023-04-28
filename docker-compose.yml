@@ -1,0 +1,26 @@
+services:
+  application:
+    build:
+      context: .
+      network: host
+    ports:
+      - ${APPLICATION_HOST}:${APPLICATION_PORT}:8000
+    env_file:
+      .env
+    environment:
+      POSTGRES_HOST: database
+    depends_on:
+      - database
+    volumes:
+      - type: bind
+        source: ${RKSI_API_CONFIG_PATH}
+        target: /config
+        read_only: true
+  database:
+    image: "postgres:15.2"
+    env_file:
+      .env
+    ports:
+      - 0.0.0.0:5432:${POSTGRES_PORT}
+volumes:
+  myapp:
