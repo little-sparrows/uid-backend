@@ -16,6 +16,8 @@ class Environment(BaseSettings):
     application_ssl_certfile: str = None
     auth_access_token: str
     allow_testing: bool = False
+    typing_dna_api_key: str
+    typing_dna_api_secret: str
 
 
 def load_env(filename: str) -> Environment:
