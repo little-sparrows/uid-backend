@@ -59,6 +59,9 @@ async def check_user(
             exact_id_user_id
         )
 
+    if not collected_typing_patterns:
+        return exact_id_user.id
+
     weak_id_users = await crud.user.weak_identify_users(
         session,
         weak_fingerprint_id,
