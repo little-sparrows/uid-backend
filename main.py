@@ -21,7 +21,8 @@ origins = [
 ]
 
 if environment.allowed_origin:
-    origins.append(environment.allowed_origin)
+    for i in filter(bool, environment.allowed_origin.split(';')):
+        origins.append(i)
 
 
 app.add_middleware(
