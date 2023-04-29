@@ -76,6 +76,12 @@ async def check_user(
 
     weak_id_users_ids = [i.id for i in weak_id_users]
 
+    if len(weak_id_users_ids) == 1:
+        # defining exact user by weak id is most accuracy case
+
+        result = weak_id_users_ids[0]
+        return result
+
     typing_check_results: tuple[Responses.Auto]
 
     # noinspection PyTypeChecker
