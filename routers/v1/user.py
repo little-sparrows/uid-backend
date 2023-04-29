@@ -47,6 +47,8 @@ async def check_user(
         fingerprint_id=fingerprint_id,
     )
 
+    return exact_id_user.id
+
     if exact_id_user is None:
         exact_id_user_id = await crud.user.create_user(
             session,
